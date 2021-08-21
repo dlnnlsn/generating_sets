@@ -31,7 +31,10 @@ class DisjointSet:
 		if self._ranks[x] == self._ranks[y]:
 			self._ranks[x] += 1
 
-		self.components -= 1
+		self._components -= 1
 
 	def components(self):
 		return self._components
+
+	def connected(self, x, y):
+		return self.find(x) == self.find(y)
